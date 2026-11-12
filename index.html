@@ -24,15 +24,28 @@
     <meta property="og:url" content="https://mixbox.com.pl/" />
     <meta property="og:image" content="https://mixbox.com.pl/foto/ekipa.jpg" />
     <link rel="icon" href="/mixbox-web/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
+    <script>
+      (function () {
+        var path = location.pathname.replace(/\/index\.html$/, "").replace(/\/$/, "");
+        if (path !== "" && path !== "/mixbox-web") return;
+        var root = path === "/mixbox-web" ? "/mixbox-web/" : "/";
+        var link = document.createElement("link");
+        link.rel = "preload";
+        link.as = "image";
+        link.type = "image/webp";
+        link.setAttribute("fetchpriority", "high");
+        link.setAttribute("imagesizes", "100vw");
+        link.setAttribute(
+          "imagesrcset",
+          root + "foto/ekipa-800.webp?v=2 800w, " + root + "foto/ekipa-1200.webp?v=2 1200w, " + root + "foto/ekipa-1920.webp?v=2 1920w"
+        );
+        link.href = root + "foto/ekipa-1200.webp?v=2";
+        document.head.appendChild(link);
+      })();
+    </script>
     <title>Przeprowadzki i wywóz odpadów Szczecin | Mixbox</title>
-    <script type="module" crossorigin src="/mixbox-web/assets/index-CLq_1Rt6.js"></script>
-    <link rel="stylesheet" crossorigin href="/mixbox-web/assets/index-DGiswII2.css">
+    <script type="module" crossorigin src="/mixbox-web/assets/index-Che3brqu.js"></script>
+    <link rel="stylesheet" crossorigin href="/mixbox-web/assets/index-BX7GBLoK.css">
   </head>
   <body>
     <div id="root"></div>
